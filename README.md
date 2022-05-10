@@ -15,9 +15,7 @@
 
 Mais um projeto sensacional da [Rocketseat](https://rocketseat.com.br/) executado durante a semana <b>NLW RETURN - TRILHA ORIGIN.</b>
 
-<b>DoctorCare</b> é uma página institucional no estilo Landing Page, responsiva, desenvolvida com o conceito de mobile first. 
-
-[Clique aqui para visualizar o projeto](https://nlw-return-impulse-two.vercel.app/)
+<b>DoctorCare</b> é uma página institucional no estilo Landing Page, desenvolvida com o conceito de mobile first. 
 
 ### 🚀 Tecnologias
 
