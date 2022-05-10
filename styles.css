@@ -7,15 +7,45 @@
 :root {
   font-size: 62.5%;
 
-  --absolute-white: #FFFFFF;
-  --primary-color: #00856F;
-  --secondary-color: #DCE9E2;
-  --primary-text-color: #212529;
-  --secondary-text-color: #495057;
-  --stats-color: #FFFAF1;
-  --bg-color: #F7F9F9;
-
   --nav-height: 7.2rem;
+  --hue: 190;
+
+  --absolute-white: #FFFFFF;
+  --primary-color: hsl(var(--hue), 100%, 26%);
+  --headline: hsl(210, 11%, 15%);
+  --paragraph: hsl(210, 9%, 31%);
+  --brand-beige: hsl(39, 100%, 97%);
+  --brand-light: hsl(calc(var(--hue) - 22), 23%, 89%);
+  --brand-light-2: hsl(calc(var(--hue) + 10), 14%, 97%);
+  --brand-dark: hsl(var(--hue), 100%, 14%);
+  --bg-light: hsl(180, 14%, 97%);
+}
+
+#services .card circle {
+  fill: var(--brand-light);
+}
+
+#services .card path {
+  stroke: var(--primary-color);
+}
+
+#navigation .logo path[fill*="#00856F"],
+#backToTopButton circle {
+  fill: var(--primary-color);
+}
+
+body.menu-expanded #navigation .logo path,
+#navigation.scroll .logo path {
+  fill: var(--absolute-white);
+}
+
+#navigation button.open-menu path[stroke*="#00856F"],
+#contact li path {
+  stroke: var(--primary-color)
+}
+
+#navigation.scroll button.open-menu path[stroke*="#00856F"] {
+  stroke: var(--absolute-white);
 }
 
 html,
@@ -34,7 +64,7 @@ body {
   text-align: center;
   overflow: overlay;
 
-  background: var(--bg-color);
+  background: var(--bg-light);
 }
 
 .wrapper {
@@ -58,7 +88,7 @@ section {
 section header h1 {
   font-size: 3.4rem;
   line-height: 130%;
-  color: var(--primary-text-color);
+  color: var(--headline);
   margin-bottom: 2.4rem;
 }
 
@@ -66,7 +96,7 @@ section header h2 {
   font-size: 3rem;
   line-height: 3.9rem;
 
-  color: var(--primary-text-color);
+  color: var(--headline);
 }
 
 section header h4 {
@@ -81,7 +111,34 @@ section .content p {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 150%;
-  color: var(--secondary-text-color);
+  color: var(--paragraph);
+}
+
+.button {
+  padding: 1.6rem 3.2rem;
+  width: fit-content;
+
+  background: var(--primary-color);
+  color: var(--absolute-white);
+  border: 0;
+  border-radius: 4rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  cursor: pointer;
+
+  transition: background 200ms;
+}
+
+.button:hover {
+  background: var(--brand-dark);
 }
 
 nav {
@@ -104,14 +161,6 @@ nav .wrapper {
 
 nav.scroll {
   background: var(--primary-color);
-}
-
-nav.scroll .logo path {
-  fill: var(--absolute-white);
-}
-
-nav.scroll button path {
-  stroke: var(--absolute-white);
 }
 
 nav button {
@@ -146,6 +195,7 @@ body.menu-expanded .menu {
   top: 0;
   left: 0;
   background: var(--primary-color);
+  opacity: 0.97;
 
   width: 100vw;
   height: 100vh;
@@ -195,6 +245,13 @@ body.menu-expanded .menu {
   margin-bottom: 8rem;
 }
 
+.menu .button:hover {
+  background: var(--primary-color);
+  color: var(--absolute-white);
+
+  filter: brightness(1.2);
+}
+
 .social-links {
   display: flex;
   align-items: center;
@@ -220,7 +277,7 @@ body.menu-expanded button path {
   content: "";
   width: 100%;
   height: calc(108rem + var(--nav-height));
-  background: var(--secondary-color);
+  background: var(--brand-light);
   display: block;
 
   position: absolute;
@@ -235,30 +292,12 @@ body.menu-expanded button path {
 
 #home p {
   font-size: 1.8rem;
-  color: var(--secondary-text-color);
+  color: var(--paragraph);
   margin-bottom: 3.2rem;
 }
 
-#home button {
-  width: 26.3rem;
-  height: 5.2rem;
-  background: var(--primary-color);
-  color: var(--absolute-white);
-  border: 0;
-  border-radius: 4rem;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  font-weight: 700;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-
+#home .button {
   margin-inline: auto;
-  margin-bottom: 6rem;
-
-  cursor: pointer;
 }
 
 #home img {
@@ -272,10 +311,10 @@ body.menu-expanded button path {
   width: 32.7rem;
   padding-block: 4rem;
   margin-inline: auto;
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--brand-light);
   border-radius: 0.6rem;
 
-  background: var(--stats-color);
+  background: var(--brand-beige);
 
   display: flex;
   flex-direction: column;
@@ -286,7 +325,7 @@ body.menu-expanded button path {
 
 #home .stat h3 {
   font-size: 4.8rem;
-  color: var(--primary-text-color);
+  color: var(--headline);
   line-height: 130%;
 
   margin-bottom: 0.4rem;
@@ -314,7 +353,7 @@ body.menu-expanded button path {
 
   background: var(--absolute-white);
 
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--brand-light);
   border-radius: 0.6rem;
 }
 
@@ -324,10 +363,86 @@ body.menu-expanded button path {
 
 #about {
   text-align: left;
-  background: var(--stats-color);
+  background: var(--brand-beige);
 }
 
 #about .content p {
   margin-top: 2.4rem;
   margin-bottom: 6rem;
+}
+
+#contact {
+  text-align: left;
+}
+
+#contact header {
+  margin-bottom: 3.2rem;
+}
+
+#contact .content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+#contact .content ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#contact .content .button {
+  margin-top: 3.2rem;
+  margin-bottom: 6rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  padding-block: 6rem;
+
+  text-align: left;
+  color: var(--absolute-white);
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+
+footer .logo svg {
+  width: 23.6rem;
+  height: 3.1rem;
+}
+
+footer .logo path {
+  fill: var(--absolute-white);
+}
+
+footer p {
+  color: var(--brand-beige);
+  line-height: 2;
+
+  margin-bottom: 3.2rem;
+}
+
+footer .social-links {
+  justify-content: flex-start;
+}
+
+#backToTopButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 3rem;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(100%);
+  transition: 200ms;
+}
+
+#backToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
