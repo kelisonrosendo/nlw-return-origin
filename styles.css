@@ -8,7 +8,7 @@
   font-size: 62.5%;
 
   --nav-height: 7.2rem;
-  --hue: 290;
+  --hue: 900;
 
   --absolute-white: #FFFFFF;
   --primary-color: hsl(var(--hue), 100%, 26%);

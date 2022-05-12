@@ -17,7 +17,7 @@ Mais um projeto sensacional da [Rocketseat](https://rocketseat.com.br/) executad
 
 <b>DoctorCare</b> é uma página institucional no estilo Landing Page, desenvolvida com o conceito de mobile first. 
 
-[Clique aqui para visualizar o projeto](https://nlw-return-origin-virid.vercel.app/)
+[Clique aqui para visualizar o projeto](https://kelisonrosendo.github.io/nlw-return-origin)
 
 ### 🚀 Tecnologias
 
